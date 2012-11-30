@@ -38,7 +38,7 @@ public abstract class GPEvaluator<T extends ComputationTask<R, C>, R extends GPC
 
 	protected transient JPPFClient jppfClient;
 
-	protected enum ComputationStrategy {
+	public enum ComputationStrategy {
 		LOCAL, DISTRIBUTED
 	}
 
