@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
  * 
  */
-public class GPProgram<C> implements Serializable {
+public class GPProgram<C> implements Serializable, Heuristic<C> {
 
 	private static final long serialVersionUID = 2873071674972923971L;
 	protected final GPFuncNode<C> root;
@@ -20,7 +20,7 @@ public class GPProgram<C> implements Serializable {
 		root = rootNode;
 	}
 
-	public double execute(C context) {
+	public double compute(C context) {
 		return executeNode(root, context);
 	}
 
@@ -40,5 +40,9 @@ public class GPProgram<C> implements Serializable {
 	@Override
 	public GPProgram<C> clone() {
 		return new GPProgram<C>(root);
+	}
+
+	public String getId() {
+		return toString();
 	}
 }

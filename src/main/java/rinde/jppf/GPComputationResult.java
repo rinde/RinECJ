@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rinde.ecj;
+package rinde.jppf;
 
 /**
  * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
@@ -11,6 +11,6 @@ public interface GPComputationResult {
 
 	float getFitness();
 
-	String getGPId();
+	String getTaskDataId();
 
 }

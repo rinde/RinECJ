@@ -9,6 +9,8 @@ import static java.util.Collections.unmodifiableList;
 import java.util.Collection;
 import java.util.List;
 
+import rinde.jppf.GPComputationResult;
+
 import ec.gp.koza.KozaFitness;
 
 /**

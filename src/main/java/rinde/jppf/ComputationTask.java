@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rinde.ecj;
+package rinde.jppf;
 
 import org.jppf.server.protocol.JPPFTask;
 
@@ -11,14 +11,14 @@ import org.jppf.server.protocol.JPPFTask;
  */
 public abstract class ComputationTask<R extends GPComputationResult, C> extends JPPFTask {
 
-	protected GPProgram<C> program;
+	protected final C taskData;
 
-	public ComputationTask(GPProgram<C> p) {
-		program = p;
+	public ComputationTask(C data) {
+		taskData = data;
 	}
 
-	public String getGPId() {
-		return program.toString();
+	public C getTaskData() {
+		return taskData;
 	}
 
 	public R getComputationResult() {

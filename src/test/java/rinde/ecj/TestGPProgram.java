@@ -53,6 +53,6 @@ public class TestGPProgram {
 	}
 
 	public void assertFunc(double expectedValue, String func) {
-		assertEquals(expectedValue, GPProgramParser.parseProgramFunc(func, functionList).execute(null), PRECISION);
+		assertEquals(expectedValue, GPProgramParser.parseProgramFunc(func, functionList).compute(null), PRECISION);
 	}
 }

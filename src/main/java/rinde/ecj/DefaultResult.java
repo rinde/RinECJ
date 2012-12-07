@@ -3,6 +3,8 @@
  */
 package rinde.ecj;
 
+import rinde.jppf.GPComputationResult;
+
 /**
  * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
  * 
@@ -10,18 +12,19 @@ package rinde.ecj;
 public class DefaultResult implements GPComputationResult {
 
 	protected final float fitness;
-	protected final String gpId;
+	protected final String taskDataId;
 
 	public DefaultResult(float fit, String id) {
 		fitness = fit;
-		gpId = id;
+		taskDataId = id;
 	}
 
 	public float getFitness() {
 		return fitness;
 	}
 
-	public String getGPId() {
-		return gpId;
+	public String getTaskDataId() {
+		return taskDataId;
 	}
+
 }

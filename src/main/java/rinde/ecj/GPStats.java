@@ -5,6 +5,7 @@ package rinde.ecj;
 
 import java.util.List;
 
+import rinde.jppf.GPComputationResult;
 import ec.EvolutionState;
 import ec.Individual;
 import ec.Statistics;
@@ -31,7 +32,7 @@ public class GPStats extends Statistics {
 		}
 
 		final List<GPComputationResult> results = ((GPFitness<GPComputationResult>) best_i.fitness).getResults();
-		System.out.println(results.get(0).getFitness() + " " + results.get(0).getGPId());
+		System.out.println(results.get(0).getFitness() + " " + results.get(0).getTaskDataId());
 		printMore(results);
 	}
 

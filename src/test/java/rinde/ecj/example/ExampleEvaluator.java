@@ -9,7 +9,6 @@ import java.util.Collection;
 
 import org.jppf.task.storage.DataProvider;
 
-import rinde.ecj.ComputationTask;
 import rinde.ecj.DefaultResult;
 import rinde.ecj.GPBaseNode;
 import rinde.ecj.GPEvaluator;
@@ -17,6 +16,7 @@ import rinde.ecj.GPProgram;
 import rinde.ecj.GPProgramParser;
 import rinde.ecj.example.ExampleEvaluator.ExampleContext;
 import rinde.ecj.example.ExampleEvaluator.ExampleTask;
+import rinde.jppf.ComputationTask;
 import ec.EvolutionState;
 import ec.gp.GPTree;
 
@@ -24,7 +24,7 @@ import ec.gp.GPTree;
  * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
  * 
  */
-public class ExampleEvaluator extends GPEvaluator<ExampleTask, DefaultResult, ExampleContext> {
+public class ExampleEvaluator extends GPEvaluator<ExampleTask, DefaultResult, GPProgram<ExampleContext>> {
 
 	@Override
 	protected Collection<ExampleTask> createComputationJobs(DataProvider dataProvider, GPTree[] trees,
@@ -39,7 +39,7 @@ public class ExampleEvaluator extends GPEvaluator<ExampleTask, DefaultResult, Ex
 		return 1;
 	}
 
-	public static class ExampleTask extends ComputationTask<DefaultResult, ExampleContext> {
+	public static class ExampleTask extends ComputationTask<DefaultResult, GPProgram<ExampleContext>> {
 
 		public ExampleTask(GPProgram<ExampleContext> p) {
 			super(p);
@@ -50,7 +50,7 @@ public class ExampleEvaluator extends GPEvaluator<ExampleTask, DefaultResult, Ex
 			for (int x = 0; x < 10; x++) {
 				for (int y = 0; y < 10; y++) {
 					final double goal = (x * x) + y;
-					final double result = program.execute(new ExampleContext(x, y));
+					final double result = taskData.compute(new ExampleContext(x, y));
 					diff += Math.abs(goal - result);
 				}
 			}
@@ -58,7 +58,7 @@ public class ExampleEvaluator extends GPEvaluator<ExampleTask, DefaultResult, Ex
 			if (Float.isInfinite(fitness) || Float.isNaN(fitness)) {
 				fitness = Float.MAX_VALUE;
 			}
-			setResult(new DefaultResult(fitness, getGPId()));
+			setResult(new DefaultResult(fitness, taskData.getId()));
 		}
 	}
 

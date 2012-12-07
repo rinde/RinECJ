@@ -16,6 +16,9 @@ import org.jppf.server.protocol.JPPFTask;
 import org.jppf.task.storage.DataProvider;
 import org.jppf.task.storage.MemoryMapDataProvider;
 
+import rinde.jppf.ComputationTask;
+import rinde.jppf.GPComputationResult;
+
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
@@ -113,7 +116,7 @@ public abstract class GPEvaluator<T extends ComputationTask<R, C>, R extends GPC
 			Collection<R> results) {
 		final Multimap<String, R> gatheredFitnessValues = HashMultimap.create();
 		for (final R res : results) {
-			final String programString = res.getGPId();// res.getComputationJob().((J)
+			final String programString = res.getTaskDataId();// res.getComputationJob().((J)
 			gatheredFitnessValues.put(programString, res);
 		}
 		for (final Entry<String, Collection<R>> entry : gatheredFitnessValues.asMap().entrySet()) {
