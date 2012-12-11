@@ -133,7 +133,11 @@ public class GenericFunctions {
 
 		@Override
 		public double execute(double[] input, T context) {
-			return Math.pow(input[0], input[1]);
+			final double res = Math.pow(input[0], input[1]);
+			if (Double.isInfinite(res) || Double.isNaN(res)) {
+				return 1d;
+			}
+			return res;
 		}
 
 	}
