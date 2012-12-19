@@ -120,11 +120,11 @@ public abstract class GPEvaluator<T extends ComputationTask<R, C>, R extends GPC
 			gatheredFitnessValues.put(programString, res);
 		}
 		for (final Entry<String, Collection<R>> entry : gatheredFitnessValues.asMap().entrySet()) {
-			if (entry.getValue().size() != expectedNumberOfResultsPerGPIndividual()) {
+			if (entry.getValue().size() != expectedNumberOfResultsPerGPIndividual(state)) {
 				throw new IllegalStateException(
 						"Number of received results does not match the number of expected results! received: "
-								+ entry.getValue().size() + " expected: " + expectedNumberOfResultsPerGPIndividual()
-								+ " for " + entry);
+								+ entry.getValue().size() + " expected: "
+								+ expectedNumberOfResultsPerGPIndividual(state) + " for " + entry);
 			}
 
 			float sum = 0;
@@ -138,7 +138,7 @@ public abstract class GPEvaluator<T extends ComputationTask<R, C>, R extends GPC
 			if (notGood) {
 				sum = Float.MAX_VALUE;
 			} else {
-				sum /= expectedNumberOfResultsPerGPIndividual();
+				sum /= expectedNumberOfResultsPerGPIndividual(state);
 			}
 			final Collection<IndividualHolder> inds = mapping.get(new GPNodeHolder(entry.getKey()));
 			checkState(!inds.isEmpty(), "there must be at least one individual for every program");
@@ -154,7 +154,7 @@ public abstract class GPEvaluator<T extends ComputationTask<R, C>, R extends GPC
 	protected abstract Collection<T> createComputationJobs(DataProvider dataProvider, GPTree[] trees,
 			EvolutionState state);
 
-	protected abstract int expectedNumberOfResultsPerGPIndividual();
+	protected abstract int expectedNumberOfResultsPerGPIndividual(EvolutionState state);
 
 	@Override
 	public boolean runComplete(EvolutionState state) {

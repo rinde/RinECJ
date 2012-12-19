@@ -35,7 +35,7 @@ public class ExampleEvaluator extends GPEvaluator<ExampleTask, DefaultResult, GP
 	}
 
 	@Override
-	protected int expectedNumberOfResultsPerGPIndividual() {
+	protected int expectedNumberOfResultsPerGPIndividual(EvolutionState state) {
 		return 1;
 	}
 
