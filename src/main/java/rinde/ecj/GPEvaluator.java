@@ -88,8 +88,28 @@ public abstract class GPEvaluator<T extends ComputationTask<R, C>, R extends GPC
 			final Collection<R> results = compute(job);
 			processResults(state, mapping, results);
 		} catch (final Exception e) {
-			throw new RuntimeException(e);
+			throw new WrapException(e);
 		}
+	}
+
+	public static class WrapException extends RuntimeException {
+
+		public final Exception exception;
+
+		public WrapException(Exception ex) {
+			exception = ex;
+		}
+
+		@Override
+		public void printStackTrace() {
+			exception.printStackTrace();
+		}
+
+		@Override
+		public String toString() {
+			return exception.toString();
+		}
+
 	}
 
 	protected Collection<R> compute(JPPFJob job) throws Exception {
@@ -104,7 +124,9 @@ public abstract class GPEvaluator<T extends ComputationTask<R, C>, R extends GPC
 			final List<JPPFTask> res = jppfClient.submit(job);
 			for (final JPPFTask t : res) {
 				if (t.getException() != null) {
-					throw new RuntimeException("This exception occured on a node", t.getException());
+					throw t.getException();// new
+											// RuntimeException("This exception occured on a node",
+											// t.getException());
 				}
 				results.add(((T) t).getComputationResult());
 			}
