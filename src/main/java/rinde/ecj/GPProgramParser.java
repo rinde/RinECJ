@@ -157,8 +157,7 @@ public class GPProgramParser {
 
 	private static <T> GPBaseNode<T> convert(Node n, Map<String, GPBaseNode<T>> funcMap) {
 		// final GPNode gpnode = new GPFunc(n.name, n.children.size());
-		checkArgument(funcMap.containsKey(n.name), "The function with name: \"" + n.name
-				+ "\" is not known to the parser.");
+		checkArgument(funcMap.containsKey(n.name), "The function with name: \"%s\" is not known to the parser.", n.name);
 		final GPBaseNode<T> node = funcMap.get(n.name).create();
 		node.children = new GPBaseNode[n.children.size()];
 		checkState(n.children.size() == node.getNumChildren(), "the supplied program is invalid, the number of children does not match the expected number of children");
