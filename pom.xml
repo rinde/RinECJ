@@ -4,13 +4,51 @@
 	<groupId>com.github.rinde</groupId>
 	<artifactId>rinecj</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<name>RinECJ</name>
 	<description>A wrapper for ECJ which simplifies configuration of genetic programming.</description>
 	<url>http://github.com/rinde/RinECJ/</url>
 	<inceptionYear>2012</inceptionYear>
-	
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
+	<scm>
+		<connection>scm:git:git@github.com:rinde/rinecj.git</connection>
+		<developerConnection>scm:git:git@github.com:rinde/rinecj.git</developerConnection>
+		<url>http://github.com/rinde/RinECJ</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>rinde</id>
+			<name>Rinde van Lon</name>
+			<email>rinde.vanlon@cs.kuleuven.be</email>
+			<url>http://rinde.nl/</url>
+			<organization>DistriNet - KU Leuven</organization>
+			<organizationUrl>http://distrinet.cs.kuleuven.be/people/rinde</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar.language>java</sonar.language>
 		<jppf.version>3.1.3</jppf.version>
 	</properties>
 
