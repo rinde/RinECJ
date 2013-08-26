@@ -5,6 +5,8 @@ package rinde.ecj;
 
 import java.io.Serializable;
 
+import javax.annotation.Nullable;
+
 /**
  * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
  * 
@@ -58,5 +60,5 @@ public abstract class GPFunc<C> implements Serializable {
 		}
 	}
 
-	public abstract double execute(double[] input, C context);
+	public abstract double execute(@Nullable double[] input, C context);
 }
