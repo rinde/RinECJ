@@ -53,28 +53,10 @@
 	</properties>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>org.jppf</groupId>
 			<artifactId>jppf-client</artifactId>
 			<version>${jppf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
-			<scope>runtime</scope>
-		</dependency>
-		<!-- <dependency> <groupId>org.jppf</groupId> <artifactId>jppf-common</artifactId> 
-			<version>${jppf.version}</version> </dependency> <dependency> <groupId>org.jppf</groupId> 
-			<artifactId>jppf-common-node</artifactId> <version>${jppf.version}</version> 
-			</dependency> -->
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>edu.gmu.cs</groupId>
@@ -90,6 +72,19 @@
 			<groupId>com.google.code.findbugs</groupId>
 			<artifactId>jsr305</artifactId>
 			<version>2.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- TEST DEPENDENCIES -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
