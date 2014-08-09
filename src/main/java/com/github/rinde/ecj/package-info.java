@@ -2,5 +2,5 @@
  * 
  */
 @ParametersAreNonnullByDefault
-package rinde.ecj;
+package com.github.rinde.ecj;
 import javax.annotation.ParametersAreNonnullByDefault;

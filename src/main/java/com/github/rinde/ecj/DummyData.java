@@ -1,4 +1,4 @@
-package rinde.ecj;
+package com.github.rinde.ecj;
 
 import ec.gp.GPData;
 

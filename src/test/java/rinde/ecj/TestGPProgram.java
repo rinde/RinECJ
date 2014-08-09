@@ -3,22 +3,22 @@
  */
 package rinde.ecj;
 
+import static com.github.rinde.ecj.GenericFunctions.newAdd;
+import static com.github.rinde.ecj.GenericFunctions.newConstants;
+import static com.github.rinde.ecj.GenericFunctions.newDiv;
+import static com.github.rinde.ecj.GenericFunctions.newIf4;
+import static com.github.rinde.ecj.GenericFunctions.newMul;
+import static com.github.rinde.ecj.GenericFunctions.newPow;
+import static com.github.rinde.ecj.GenericFunctions.newSub;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
-import static rinde.ecj.GenericFunctions.newAdd;
-import static rinde.ecj.GenericFunctions.newConstants;
-import static rinde.ecj.GenericFunctions.newDiv;
-import static rinde.ecj.GenericFunctions.newIf4;
-import static rinde.ecj.GenericFunctions.newMul;
-import static rinde.ecj.GenericFunctions.newPow;
-import static rinde.ecj.GenericFunctions.newSub;
 
 import java.util.List;
 
 import org.junit.Test;
 
-import rinde.ecj.GPFunc;
-import rinde.ecj.GPProgramParser;
+import com.github.rinde.ecj.GPFunc;
+import com.github.rinde.ecj.GPProgramParser;
 
 /**
  * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rinde.jppf;
+package com.github.rinde.jppf;
 
 import org.jppf.server.protocol.JPPFTask;
 

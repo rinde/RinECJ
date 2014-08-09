@@ -1,9 +1,9 @@
 /**
  * 
  */
-package rinde.ecj;
+package com.github.rinde.ecj;
 
-import rinde.jppf.GPComputationResult;
+import com.github.rinde.jppf.GPComputationResult;
 
 /**
  * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>

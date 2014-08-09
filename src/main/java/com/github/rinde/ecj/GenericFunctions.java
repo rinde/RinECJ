@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rinde.ecj;
+package com.github.rinde.ecj;
 
 import static com.google.common.collect.Lists.newArrayList;
 

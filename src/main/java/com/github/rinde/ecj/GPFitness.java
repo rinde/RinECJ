@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rinde.ecj;
+package com.github.rinde.ecj;
 
 import static com.google.common.collect.Lists.newArrayList;
 import static java.util.Collections.unmodifiableList;
@@ -9,7 +9,7 @@ import static java.util.Collections.unmodifiableList;
 import java.util.Collection;
 import java.util.List;
 
-import rinde.jppf.GPComputationResult;
+import com.github.rinde.jppf.GPComputationResult;
 
 import ec.gp.koza.KozaFitness;
 

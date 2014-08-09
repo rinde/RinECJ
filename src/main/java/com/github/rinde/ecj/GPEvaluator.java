@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rinde.ecj;
+package com.github.rinde.ecj;
 
 import static com.google.common.base.Preconditions.checkState;
 import static com.google.common.collect.Lists.newArrayList;
@@ -16,9 +16,8 @@ import org.jppf.server.protocol.JPPFTask;
 import org.jppf.task.storage.DataProvider;
 import org.jppf.task.storage.MemoryMapDataProvider;
 
-import rinde.jppf.ComputationTask;
-import rinde.jppf.GPComputationResult;
-
+import com.github.rinde.jppf.ComputationTask;
+import com.github.rinde.jppf.GPComputationResult;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 

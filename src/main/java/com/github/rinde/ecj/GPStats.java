@@ -1,11 +1,12 @@
 /**
  * 
  */
-package rinde.ecj;
+package com.github.rinde.ecj;
 
 import java.util.List;
 
-import rinde.jppf.GPComputationResult;
+import com.github.rinde.jppf.GPComputationResult;
+
 import ec.EvolutionState;
 import ec.Individual;
 import ec.Statistics;

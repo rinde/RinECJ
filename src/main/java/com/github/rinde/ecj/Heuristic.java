@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rinde.ecj;
+package com.github.rinde.ecj;
 
 /**
  * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>

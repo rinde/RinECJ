@@ -4,15 +4,16 @@ import static com.google.common.collect.Lists.newArrayList;
 
 import java.util.Collection;
 
-import rinde.ecj.GPFunc;
-import rinde.ecj.GPFuncSet;
-import rinde.ecj.GenericFunctions.Add;
-import rinde.ecj.GenericFunctions.Constant;
-import rinde.ecj.GenericFunctions.Div;
-import rinde.ecj.GenericFunctions.If4;
-import rinde.ecj.GenericFunctions.Mul;
-import rinde.ecj.GenericFunctions.Pow;
-import rinde.ecj.GenericFunctions.Sub;
+import com.github.rinde.ecj.GPFunc;
+import com.github.rinde.ecj.GPFuncSet;
+import com.github.rinde.ecj.GenericFunctions.Add;
+import com.github.rinde.ecj.GenericFunctions.Constant;
+import com.github.rinde.ecj.GenericFunctions.Div;
+import com.github.rinde.ecj.GenericFunctions.If4;
+import com.github.rinde.ecj.GenericFunctions.Mul;
+import com.github.rinde.ecj.GenericFunctions.Pow;
+import com.github.rinde.ecj.GenericFunctions.Sub;
+
 import rinde.ecj.example.ExampleEvaluator.ExampleContext;
 
 public class ExampleFunctions extends GPFuncSet<ExampleContext> {

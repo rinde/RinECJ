@@ -1,4 +1,4 @@
-package rinde.ecj;
+package com.github.rinde.ecj;
 
 import ec.EvolutionState;
 import ec.Individual;

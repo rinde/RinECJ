@@ -9,14 +9,15 @@ import java.util.Collection;
 
 import org.jppf.task.storage.DataProvider;
 
-import rinde.ecj.DefaultResult;
-import rinde.ecj.GPBaseNode;
-import rinde.ecj.GPEvaluator;
-import rinde.ecj.GPProgram;
-import rinde.ecj.GPProgramParser;
+import com.github.rinde.ecj.DefaultResult;
+import com.github.rinde.ecj.GPBaseNode;
+import com.github.rinde.ecj.GPEvaluator;
+import com.github.rinde.ecj.GPProgram;
+import com.github.rinde.ecj.GPProgramParser;
+import com.github.rinde.jppf.ComputationTask;
+
 import rinde.ecj.example.ExampleEvaluator.ExampleContext;
 import rinde.ecj.example.ExampleEvaluator.ExampleTask;
-import rinde.jppf.ComputationTask;
 import ec.EvolutionState;
 import ec.gp.GPTree;
 
