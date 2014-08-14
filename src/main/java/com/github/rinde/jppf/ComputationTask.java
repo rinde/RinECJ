@@ -6,7 +6,7 @@ package com.github.rinde.jppf;
 import org.jppf.server.protocol.JPPFTask;
 
 /**
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  * 
  */
 // TODO investigate wether the second type parameter can be dropped (the data)

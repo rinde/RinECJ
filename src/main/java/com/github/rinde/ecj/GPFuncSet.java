@@ -16,7 +16,7 @@ import ec.gp.GPType;
 import ec.util.Parameter;
 
 /**
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  * 
  */
 public abstract class GPFuncSet<T> extends GPFunctionSet {

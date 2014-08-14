@@ -16,7 +16,7 @@ import ec.util.Parameter;
 /**
  * This class is used during evolution.
  * 
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  * 
  */
 public class GPBaseNode<C> extends GPNode {

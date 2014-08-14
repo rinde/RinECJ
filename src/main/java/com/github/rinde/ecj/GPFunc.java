@@ -8,7 +8,7 @@ import java.io.Serializable;
 import javax.annotation.Nullable;
 
 /**
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  * 
  */
 public abstract class GPFunc<C> implements Serializable {

@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * Immutable function node, is used during execution.
  * 
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  */
 public class GPFuncNode<C> implements Serializable {
 	private static final long serialVersionUID = 4880258638384679392L;

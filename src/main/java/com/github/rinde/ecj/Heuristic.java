@@ -4,7 +4,7 @@
 package com.github.rinde.ecj;
 
 /**
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  * 
  */
 public interface Heuristic<T> {

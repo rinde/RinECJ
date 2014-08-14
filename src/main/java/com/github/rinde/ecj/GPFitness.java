@@ -16,7 +16,7 @@ import ec.gp.koza.KozaFitness;
 /**
  * Fitness with an additional field for storing computation results.
  * 
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  */
 public class GPFitness<T extends GPComputationResult> extends KozaFitness {
 

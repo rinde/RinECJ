@@ -22,7 +22,7 @@ import ec.EvolutionState;
 import ec.gp.GPTree;
 
 /**
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  * 
  */
 public class ExampleEvaluator extends GPEvaluator<ExampleTask, DefaultResult, GPProgram<ExampleContext>> {

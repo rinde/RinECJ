@@ -6,7 +6,7 @@ package com.github.rinde.ecj;
 import com.github.rinde.jppf.GPComputationResult;
 
 /**
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  * 
  */
 public class DefaultResult implements GPComputationResult {

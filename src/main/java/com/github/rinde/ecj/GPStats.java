@@ -12,7 +12,7 @@ import ec.Individual;
 import ec.Statistics;
 
 /**
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  * 
  */
 public class GPStats extends Statistics {

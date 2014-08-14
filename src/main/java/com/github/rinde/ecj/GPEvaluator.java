@@ -29,7 +29,7 @@ import ec.gp.GPTree;
 import ec.util.Parameter;
 
 /**
- * @author Rinde van Lon <rinde.vanlon@cs.kuleuven.be>
+ * @author Rinde van Lon 
  * 
  */
 // note: the C here must correspond to the type of the GPFuncSet !
