@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author Rinde van Lon 
  * 
  */
-public class GPProgram<C> implements Serializable, Heuristic<C> {
+public class GPProgram<C> implements Serializable, PriorityHeuristic<C> {
 
 	private static final long serialVersionUID = 2873071674972923971L;
 	protected final GPFuncNode<C> root;
