@@ -2,8 +2,8 @@
 parent.0 = ecj20parents/koza.params
 
 state = ec.simple.SimpleEvolutionState
-pop.subpop.0.species.fitness = rinde.ecj.GPFitness
-stat = rinde.ecj.GPStats
+pop.subpop.0.species.fitness = com.github.rinde.ecj.GPFitness
+stat = com.github.rinde.ecj.GPStats
  
 gp.fs.0.size = 1
 gp.fs.0.name = f0
