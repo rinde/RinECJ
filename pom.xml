@@ -52,11 +52,11 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.jppf</groupId>
 			<artifactId>jppf-client</artifactId>
 			<version>${jppf.version}</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>edu.gmu.cs</groupId>
 			<artifactId>ecj</artifactId>
@@ -74,11 +74,12 @@
 			<version>[3.0.0,4.0.0)</version>
 		</dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
-			<scope>runtime</scope>
-		</dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.3</version>
+            <scope>provided</scope>
+        </dependency>
+		
 		<!-- TEST DEPENDENCIES -->
 		<dependency>
             <groupId>com.google.truth</groupId>
