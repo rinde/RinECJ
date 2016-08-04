@@ -1,3 +1,4 @@
 target/
 out.stat
 org.sonar.ide.eclipse.core.prefs
+.DS_Store
