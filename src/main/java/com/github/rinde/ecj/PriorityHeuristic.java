@@ -4,13 +4,13 @@
 package com.github.rinde.ecj;
 
 /**
- * @author Rinde van Lon 
+ * @author Rinde van Lon
  * 
  */
 public interface PriorityHeuristic<T> {
 
-	double compute(T input);
+  double compute(T input);
 
-	String getId();
+  String getId();
 
 }

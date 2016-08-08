@@ -4,13 +4,13 @@
 package com.github.rinde.jppf;
 
 /**
- * @author Rinde van Lon 
+ * @author Rinde van Lon
  * 
  */
 public interface GPComputationResult {
 
-	float getFitness();
+  float getFitness();
 
-	String getTaskDataId();
+  String getTaskDataId();
 
 }

@@ -6,25 +6,25 @@ package com.github.rinde.ecj;
 import com.github.rinde.jppf.GPComputationResult;
 
 /**
- * @author Rinde van Lon 
+ * @author Rinde van Lon
  * 
  */
 public class DefaultResult implements GPComputationResult {
 
-	protected final float fitness;
-	protected final String taskDataId;
+  protected final float fitness;
+  protected final String taskDataId;
 
-	public DefaultResult(float fit, String id) {
-		fitness = fit;
-		taskDataId = id;
-	}
+  public DefaultResult(float fit, String id) {
+    fitness = fit;
+    taskDataId = id;
+  }
 
-	public float getFitness() {
-		return fitness;
-	}
+  public float getFitness() {
+    return fitness;
+  }
 
-	public String getTaskDataId() {
-		return taskDataId;
-	}
+  public String getTaskDataId() {
+    return taskDataId;
+  }
 
 }

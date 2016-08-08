@@ -16,25 +16,25 @@ import ec.gp.koza.KozaFitness;
 /**
  * Fitness with an additional field for storing computation results.
  * 
- * @author Rinde van Lon 
+ * @author Rinde van Lon
  */
 public class GPFitness<T extends GPComputationResult> extends KozaFitness {
 
-	private static final long serialVersionUID = -2256611595987359990L;
-	protected List<T> results;
+  private static final long serialVersionUID = -2256611595987359990L;
+  protected List<T> results;
 
-	public GPFitness() {
-		super();
-		results = newArrayList();
-	}
+  public GPFitness() {
+    super();
+    results = newArrayList();
+  }
 
-	public void addResults(Collection<T> res) {
-		// checkState(results.isEmpty(), "results can be added only once!");
-		results = newArrayList(res);
-	}
+  public void addResults(Collection<T> res) {
+    // checkState(results.isEmpty(), "results can be added only once!");
+    results = newArrayList(res);
+  }
 
-	public List<T> getResults() {
-		return unmodifiableList(results);
-	}
+  public List<T> getResults() {
+    return unmodifiableList(results);
+  }
 
 }

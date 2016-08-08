@@ -4,8 +4,8 @@ import ec.gp.GPData;
 
 public class DummyData extends GPData {
 
-	private static final long serialVersionUID = -2625421279026423809L;
+  private static final long serialVersionUID = -2625421279026423809L;
 
-	@Override
-	public void copyTo(GPData gpd) {}
+  @Override
+  public void copyTo(GPData gpd) {}
 }
