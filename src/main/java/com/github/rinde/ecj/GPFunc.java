@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.github.rinde.ecj;
 
@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 
 /**
  * @author Rinde van Lon
- * 
+ *
  */
 public abstract class GPFunc<C> implements Serializable {
   private static final long serialVersionUID = -861693143274097130L;
@@ -24,16 +24,16 @@ public abstract class GPFunc<C> implements Serializable {
     this(null, children);
   }
 
-  public GPFunc(String name) {
-    this(name, 0);
+  public GPFunc(String nm) {
+    this(nm, 0);
   }
 
-  public GPFunc(String name, int children) {
+  public GPFunc(String nm, int children) {
     numChildren = children;
-    if (name == null) {
+    if (nm == null) {
       this.name = getClass().getSimpleName().toLowerCase();
     } else {
-      this.name = name;
+      this.name = nm;
     }
   }
 
@@ -54,8 +54,10 @@ public abstract class GPFunc<C> implements Serializable {
     try {
       return this.getClass().getConstructor().newInstance();
     } catch (final Exception e) {
-      throw new RuntimeException(
-        "In order for this to work each GPFunc instance must have a publicly accessible zero-arg constructor. Typically the instances are inner public static classes.",
+      throw new IllegalStateException(
+        "In order for this to work each GPFunc instance must have a publicly "
+          + "accessible zero-arg constructor. Typically the instances are inner"
+          + " public static classes.",
         e);
     }
   }

@@ -13,7 +13,8 @@ import java.util.List;
  * @author Rinde van Lon
  *
  */
-public class GenericFunctions {
+public final class GenericFunctions {
+  private GenericFunctions() {}
 
   public static <T> If4<T> newIf4() {
     return new If4<T>();

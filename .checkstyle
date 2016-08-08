@@ -4,7 +4,12 @@
   <local-check-config name="cs-profile" location="files/cs-profile.checkstyle" type="project" description="">
     <additional-data name="protect-config-file" value="false"/>
   </local-check-config>
-  <fileset name="all" enabled="true" check-config-name="cs-profile" local="true">
+  <local-check-config name="RinSim-style" location="/Users/rinde/workspace/RinECJ/checkstyle.xml" type="external" description="">
+    <property name="checkstyle.cache.file" value="abc"/>
+    <additional-data name="protect-config-file" value="false"/>
+  </local-check-config>
+  <fileset name="all" enabled="true" check-config-name="RinSim-style" local="true">
     <file-match-pattern match-pattern="." include-pattern="true"/>
   </fileset>
+  <filter name="DerivedFiles" enabled="true"/>
 </fileset-config>

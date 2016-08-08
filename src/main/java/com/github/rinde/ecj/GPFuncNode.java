@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.github.rinde.ecj;
 
@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  * Immutable function node, is used during execution.
- * 
+ *
  * @author Rinde van Lon
  */
 public class GPFuncNode<C> implements Serializable {
@@ -25,7 +25,8 @@ public class GPFuncNode<C> implements Serializable {
     checkArgument(
       (function.getNumChildren() == 0 && c == null)
         || function.getNumChildren() == c.length,
-      "GPFuncNode must always be initialized with the number of children that it requires.");
+      "GPFuncNode must always be initialized with the number of children that "
+        + "it requires.");
     func = function;
     children = c;
   }

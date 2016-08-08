@@ -1,7 +1,7 @@
 /**
- * 
+ *
  */
-package rinde.ecj;
+package com.github.rinde.ecj;
 
 import static com.github.rinde.ecj.GenericFunctions.newAdd;
 import static com.github.rinde.ecj.GenericFunctions.newConstants;
@@ -17,18 +17,14 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.github.rinde.ecj.GPFunc;
-import com.github.rinde.ecj.GPProgramParser;
-
 /**
  * @author Rinde van Lon
- * 
+ *
  */
 public class TestGPProgram {
 
+  static final List<GPFunc<Object>> FUNC_LIST = init();
   private static final double PRECISION = 0.0000001;
-
-  static final List<GPFunc<Object>> functionList = init();
 
   public static List<GPFunc<Object>> init() {
     final List<GPFunc<Object>> list =
@@ -56,7 +52,7 @@ public class TestGPProgram {
 
   public void assertFunc(double expectedValue, String func) {
     assertEquals(expectedValue,
-      GPProgramParser.parseProgramFunc(func, functionList).compute(null),
+      GPProgramParser.parseProgramFunc(func, FUNC_LIST).compute(null),
       PRECISION);
   }
 }

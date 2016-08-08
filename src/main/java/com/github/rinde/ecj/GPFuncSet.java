@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.github.rinde.ecj;
 
@@ -17,7 +17,7 @@ import ec.util.Parameter;
 
 /**
  * @author Rinde van Lon
- * 
+ *
  */
 public abstract class GPFuncSet<T> extends GPFunctionSet {
 
@@ -49,14 +49,6 @@ public abstract class GPFuncSet<T> extends GPFunctionSet {
           base.push(P_NAME));
     }
 
-    // How many functions do I have?
-    // final int numFuncs = state.parameters.getInt(base.push(P_SIZE), null,
-    // 1);
-    // if (numFuncs < 1) {
-    // state.output.error("The GPFunctionSet \"" + name +
-    // "\" has no functions.", base.push(P_SIZE));
-    // }
-
     nodesByName = new Hashtable();
 
     final Parameter p = base.push(P_FUNC);
@@ -71,31 +63,6 @@ public abstract class GPFuncSet<T> extends GPFunctionSet {
       tmp.addElement(node);
     }
 
-    // final Parameter p = base.push(P_FUNC);
-
-    // for (int x = 0; x < numFuncs; x++) {
-    // // load
-    // final Parameter pp = p.push("" + x);
-    // final GPNode gpfi = (GPNode)
-    // (state.parameters.getInstanceForParameter(pp, null, GPNode.class));
-    // gpfi.setup(state, pp);
-    //
-    // // add to my collection
-    // tmp.addElement(gpfi);
-    //
-    // // Load into the nodesByName hashtable
-    // final GPNode[] nodes = (GPNode[]) (nodesByName.get(gpfi.name()));
-    // if (nodes == null) {
-    // nodesByName.put(gpfi.name(), new GPNode[] { gpfi });
-    // } else {
-    // // O(n^2) but uncommon so what the heck.
-    // final GPNode[] nodes2 = new GPNode[nodes.length + 1];
-    // System.arraycopy(nodes, 0, nodes2, 0, nodes.length);
-    // nodes2[nodes2.length - 1] = gpfi;
-    // nodesByName.put(gpfi.name(), nodes2);
-    // }
-    // }
-
     // Make my hash tables
     nodes_h = new Hashtable();
     terminals_h = new Hashtable();
@@ -105,7 +72,7 @@ public abstract class GPFuncSet<T> extends GPFunctionSet {
 
     final Enumeration e =
       ((GPInitializer) state.initializer).typeRepository.elements();
-    final GPInitializer initializer = ((GPInitializer) state.initializer);
+    final GPInitializer initializer = (GPInitializer) state.initializer;
     while (e.hasMoreElements()) {
       final GPType typ = (GPType) (e.nextElement());
 

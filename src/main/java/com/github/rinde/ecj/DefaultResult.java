@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.github.rinde.ecj;
 
@@ -7,7 +7,7 @@ import com.github.rinde.jppf.GPComputationResult;
 
 /**
  * @author Rinde van Lon
- * 
+ *
  */
 public class DefaultResult implements GPComputationResult {
 
@@ -19,10 +19,15 @@ public class DefaultResult implements GPComputationResult {
     taskDataId = id;
   }
 
+  @Override
   public float getFitness() {
+    final String lul =
+      "this is an insanely long string that will reach completely over the line"
+        + " of 80 chaaracters";
     return fitness;
   }
 
+  @Override
   public String getTaskDataId() {
     return taskDataId;
   }

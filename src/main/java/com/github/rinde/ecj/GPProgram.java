@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.github.rinde.ecj;
 
@@ -7,9 +7,9 @@ import java.io.Serializable;
 
 /**
  * immutable
- * 
+ *
  * @author Rinde van Lon
- * 
+ *
  */
 public class GPProgram<C> implements Serializable, PriorityHeuristic<C> {
 
@@ -20,6 +20,7 @@ public class GPProgram<C> implements Serializable, PriorityHeuristic<C> {
     root = rootNode;
   }
 
+  @Override
   public double compute(C context) {
     return executeNode(root, context);
   }
@@ -39,9 +40,10 @@ public class GPProgram<C> implements Serializable, PriorityHeuristic<C> {
 
   @Override
   public GPProgram<C> clone() {
-    return new GPProgram<C>(root);
+    return new GPProgram<>(root);
   }
 
+  @Override
   public String getId() {
     return toString();
   }

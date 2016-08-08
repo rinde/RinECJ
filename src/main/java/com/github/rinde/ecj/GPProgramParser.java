@@ -26,7 +26,9 @@ import ec.gp.GPNode;
  * @author Rinde van Lon (rinde.vanlon@cs.kuleuven.be)
  *
  */
-public class GPProgramParser {
+public final class GPProgramParser {
+
+  private GPProgramParser() {}
 
   public static void parse() {
     // (foreach (nearbypacks) (addtoplan (foreachpackref)))
@@ -168,7 +170,8 @@ public class GPProgramParser {
     final GPBaseNode<T> node = funcMap.get(n.name).create();
     node.children = new GPBaseNode[n.children.size()];
     checkState(n.children.size() == node.getNumChildren(),
-      "the supplied program is invalid, the number of children does not match the expected number of children");
+      "the supplied program is invalid, the number of children does not match "
+        + "the expected number of children");
     for (int i = 0; i < n.children.size(); i++) {
       node.children[i] = convert(n.children.get(i), funcMap);
     }
@@ -180,8 +183,8 @@ public class GPProgramParser {
     String name;
     List<Node> children;
 
-    public Node(String name) {
-      this.name = name;
+    Node(String nm) {
+      name = nm;
       children = new ArrayList<Node>();
     }
 

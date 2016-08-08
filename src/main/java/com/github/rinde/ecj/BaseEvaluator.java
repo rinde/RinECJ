@@ -20,6 +20,8 @@ import static com.google.common.base.Preconditions.checkState;
 import java.util.Collection;
 import java.util.Map.Entry;
 
+import javax.annotation.Nullable;
+
 import com.github.rinde.jppf.GPComputationResult;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.LinkedHashMultimap;
@@ -74,7 +76,7 @@ public abstract class BaseEvaluator extends Evaluator {
     for (int i = 0; i < state.population.subpops.length; i++) {
       for (int j = 0; j < state.population.subpops[i].individuals.length; j++) {
         final GPIndividual gpInd =
-          ((GPIndividual) state.population.subpops[i].individuals[j]);
+          (GPIndividual) state.population.subpops[i].individuals[j];
         mapping.put(new GPNodeHolder(gpInd.trees), new IndividualHolder(gpInd));
       }
     }
@@ -90,7 +92,7 @@ public abstract class BaseEvaluator extends Evaluator {
     final Multimap<String, GPComputationResult> gatheredFitnessValues =
       HashMultimap.create();
     for (final GPComputationResult res : results) {
-      final String programString = res.getTaskDataId();// res.getComputationJob().((J)
+      final String programString = res.getTaskDataId();
       gatheredFitnessValues.put(programString, res);
     }
     for (final Entry<String, Collection<GPComputationResult>> entry : gatheredFitnessValues
@@ -98,7 +100,8 @@ public abstract class BaseEvaluator extends Evaluator {
       if (entry.getValue()
         .size() != expectedNumberOfResultsPerGPIndividual(state)) {
         throw new IllegalStateException(
-          "Number of received results does not match the number of expected results! received: "
+          "Number of received results does not match the number of expected "
+            + "results! received: "
             + entry.getValue().size() + " expected: "
             + expectedNumberOfResultsPerGPIndividual(state) + " for " + entry);
       }
@@ -134,16 +137,17 @@ public abstract class BaseEvaluator extends Evaluator {
   public class IndividualHolder {
     public final Individual ind;
 
-    public IndividualHolder(Individual ind) {
-      this.ind = ind;
+    public IndividualHolder(Individual individual) {
+      ind = individual;
     }
   }
 
   public class GPNodeHolder {
     public final String string;
+    @Nullable
     public final GPTree[] trees;
 
-    public GPNodeHolder(GPTree[] t, String s) {
+    public GPNodeHolder(@Nullable GPTree[] t, String s) {
       trees = t;
       string = s;
     }
@@ -152,8 +156,8 @@ public abstract class BaseEvaluator extends Evaluator {
       this(t, BaseEvaluator.treeToString(t));
     }
 
-    public GPNodeHolder(String string) {
-      this(null, string);
+    public GPNodeHolder(String s) {
+      this(null, s);
     }
 
     @Override
@@ -162,7 +166,10 @@ public abstract class BaseEvaluator extends Evaluator {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(@Nullable Object o) {
+      if (o == null) {
+        return false;
+      }
       return toString().equals(o.toString());
     }
 

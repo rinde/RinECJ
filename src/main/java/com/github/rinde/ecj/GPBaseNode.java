@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.github.rinde.ecj;
 
@@ -15,9 +15,9 @@ import ec.util.Parameter;
 
 /**
  * This class is used during evolution.
- * 
+ *
  * @author Rinde van Lon
- * 
+ *
  */
 public class GPBaseNode<C> extends GPNode {
 
@@ -45,7 +45,7 @@ public class GPBaseNode<C> extends GPNode {
     // rules, checked in children versions of setup(...)
 
     final GPNodeConstraints constraintsObj =
-      constraints(((GPInitializer) state.initializer));
+      constraints((GPInitializer) state.initializer);
     final int len = constraintsObj.childtypes.length;
     if (len == 0) {
       children = constraintsObj.zeroChildren;
@@ -76,7 +76,7 @@ public class GPBaseNode<C> extends GPNode {
   }
 
   public GPBaseNode<C> create() {
-    return new GPBaseNode<C>(func);
+    return new GPBaseNode<>(func);
   }
 
   public int getNumChildren() {

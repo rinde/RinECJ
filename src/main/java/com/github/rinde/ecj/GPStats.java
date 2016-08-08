@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.github.rinde.ecj;
 
@@ -13,7 +13,7 @@ import ec.Statistics;
 
 /**
  * @author Rinde van Lon
- * 
+ *
  */
 public class GPStats extends Statistics {
 
