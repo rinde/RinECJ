@@ -136,13 +136,13 @@
 		<module name="HiddenField" />
 		<module name="IllegalInstantiation" />
 		<module name="IllegalToken" />
-		<module name="MagicNumber" />
+		<!-- <module name="MagicNumber" /> DISABLED, it makes less sense in this project -->
 		<module name="MissingSwitchDefault" />
-		<module name="ModifiedControlVariable" />
+		<!-- <module name="ModifiedControlVariable" /> DISABLED, parser uses it -->
 		<module name="SimplifyBooleanExpression" />
 		<module name="SimplifyBooleanReturn" />
 		<module name="StringLiteralEquality" />
-		<module name="NoClone" />
+		<!-- <module name="NoClone" /> DISABLED, needed because of ECJ -->
 		<module name="NoFinalizer" />
 		<module name="IllegalThrows" />
 		<module name="PackageDeclaration" />

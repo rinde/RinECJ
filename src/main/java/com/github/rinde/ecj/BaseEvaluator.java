@@ -22,7 +22,6 @@ import java.util.Map.Entry;
 
 import javax.annotation.Nullable;
 
-import com.github.rinde.jppf.GPComputationResult;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;

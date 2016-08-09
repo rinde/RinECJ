@@ -6,7 +6,7 @@ package com.github.rinde.ecj;
 import java.io.Serializable;
 
 /**
- * immutable
+ * immutable.
  *
  * @author Rinde van Lon
  *

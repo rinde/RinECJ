@@ -3,8 +3,6 @@
  */
 package com.github.rinde.ecj;
 
-import com.github.rinde.jppf.GPComputationResult;
-
 /**
  * @author Rinde van Lon
  *

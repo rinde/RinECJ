@@ -39,10 +39,10 @@ public abstract class GPFuncSet<T> extends GPFunctionSet {
         base.push(P_NAME));
     }
     // Register me
-    final GPFunctionSet old_functionset =
+    final GPFunctionSet oldFunctionset =
       (GPFunctionSet) (((GPInitializer) state.initializer).functionSetRepository
         .put(name, this));
-    if (old_functionset != null) {
+    if (oldFunctionset != null) {
       state.output
         .fatal(
           "The GPFunctionSet \"" + name + "\" has been defined multiple times.",
@@ -77,9 +77,9 @@ public abstract class GPFuncSet<T> extends GPFunctionSet {
       final GPType typ = (GPType) (e.nextElement());
 
       // make vectors for the type.
-      final Vector nodes_v = new Vector();
-      final Vector terminals_v = new Vector();
-      final Vector nonterminals_v = new Vector();
+      final Vector nodesV = new Vector();
+      final Vector terminalsV = new Vector();
+      final Vector nonterminalsV = new Vector();
 
       // add GPNodes as appropriate to each vector
       final Enumeration v = tmp.elements();
@@ -87,28 +87,28 @@ public abstract class GPFuncSet<T> extends GPFunctionSet {
         final GPNode i = (GPNode) (v.nextElement());
         if (typ.compatibleWith(initializer,
           i.constraints(initializer).returntype)) {
-          nodes_v.addElement(i);
+          nodesV.addElement(i);
           if (i.children.length == 0) {
-            terminals_v.addElement(i);
+            terminalsV.addElement(i);
           } else {
-            nonterminals_v.addElement(i);
+            nonterminalsV.addElement(i);
           }
         }
       }
 
       // turn nodes_h' vectors into arrays
-      GPNode[] ii = new GPNode[nodes_v.size()];
-      nodes_v.copyInto(ii);
+      GPNode[] ii = new GPNode[nodesV.size()];
+      nodesV.copyInto(ii);
       nodes_h.put(typ, ii);
 
       // turn terminals_h' vectors into arrays
-      ii = new GPNode[terminals_v.size()];
-      terminals_v.copyInto(ii);
+      ii = new GPNode[terminalsV.size()];
+      terminalsV.copyInto(ii);
       terminals_h.put(typ, ii);
 
       // turn nonterminals_h' vectors into arrays
-      ii = new GPNode[nonterminals_v.size()];
-      nonterminals_v.copyInto(ii);
+      ii = new GPNode[nonterminalsV.size()];
+      nonterminalsV.copyInto(ii);
       nonterminals_h.put(typ, ii);
     }
 
@@ -119,8 +119,8 @@ public abstract class GPFuncSet<T> extends GPFunctionSet {
     // single function has a compatible argument function (an unneccessary
     // check)
 
-    state.output.exitIfErrors(); // because I promised when I called
-    // n.setup(...)
+    // because I promised when I called:
+    state.output.exitIfErrors();
 
     // postprocess the function set
     postProcessFunctionSet();

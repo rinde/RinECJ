@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.github.rinde.jppf;
+package com.github.rinde.ecj;
 
 /**
  * @author Rinde van Lon

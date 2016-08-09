@@ -5,8 +5,6 @@ package com.github.rinde.ecj;
 
 import java.util.List;
 
-import com.github.rinde.jppf.GPComputationResult;
-
 import ec.EvolutionState;
 import ec.Individual;
 import ec.Statistics;
@@ -17,6 +15,10 @@ import ec.Statistics;
  */
 public class GPStats extends Statistics {
 
+  private static final long serialVersionUID = 8418481677963130011L;
+
+  public GPStats() {}
+
   @Override
   public void postEvaluationStatistics(final EvolutionState state) {
     super.postEvaluationStatistics(state);
@@ -25,19 +27,19 @@ public class GPStats extends Statistics {
       throw new IllegalStateException("More than one subpop is not supported.");
     }
 
-    Individual best_i = null; // quiets compiler complaints
+    Individual bestInd = null;
     for (int y = 1; y < state.population.subpops[0].individuals.length; y++) {
-      if (best_i == null || state.population.subpops[0].individuals[y].fitness
-        .betterThan(best_i.fitness)) {
-        best_i = state.population.subpops[0].individuals[y];
+      if (bestInd == null || state.population.subpops[0].individuals[y].fitness
+        .betterThan(bestInd.fitness)) {
+        bestInd = state.population.subpops[0].individuals[y];
       }
     }
 
     final List<GPComputationResult> results =
-      ((GPFitness<GPComputationResult>) best_i.fitness).getResults();
+      ((GPFitness<GPComputationResult>) bestInd.fitness).getResults();
     System.out.println(
       results.get(0).getFitness() + " " + results.get(0).getTaskDataId());
-    printMore(state, best_i, results);
+    printMore(state, bestInd, results);
   }
 
   public void printMore(EvolutionState state, Individual best,
