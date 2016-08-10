@@ -71,7 +71,7 @@ public final class GenericFunctions {
     private static final long serialVersionUID = 2200299240321191164L;
 
     public Add() {
-      super(2);
+      super("+", 2);
     }
 
     @Override
@@ -84,7 +84,7 @@ public final class GenericFunctions {
     private static final long serialVersionUID = -1363621468791103104L;
 
     public Sub() {
-      super(2);
+      super("-", 2);
     }
 
     @Override
@@ -97,7 +97,7 @@ public final class GenericFunctions {
     private static final long serialVersionUID = 537369514239069421L;
 
     public Mul() {
-      super(2);
+      super("x", 2);
     }
 
     @Override
@@ -110,7 +110,7 @@ public final class GenericFunctions {
     private static final long serialVersionUID = 6727402143693804260L;
 
     public Div() {
-      super(2);
+      super("/", 2);
     }
 
     // protected division

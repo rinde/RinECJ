@@ -35,14 +35,15 @@ public class GPStats extends Statistics {
       }
     }
 
-    final List<GPComputationResult> results =
+    final List<GPComputationResult> bestResults =
       ((GPFitness<GPComputationResult>) bestInd.fitness).getResults();
     System.out.println(
-      results.get(0).getFitness() + " " + results.get(0).getTaskDataId());
-    printMore(state, bestInd, results);
+      bestResults.get(0).getFitness() + " "
+        + bestResults.get(0).getTaskDataId());
+    printMore(state, bestInd, bestResults);
   }
 
   public void printMore(EvolutionState state, Individual best,
-      List<GPComputationResult> results) {}
+      List<GPComputationResult> bestResults) {}
 
 }

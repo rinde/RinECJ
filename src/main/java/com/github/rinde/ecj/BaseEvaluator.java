@@ -123,10 +123,12 @@ public abstract class BaseEvaluator extends Evaluator {
       checkState(!inds.isEmpty(),
         "there must be at least one individual for every program");
       for (final IndividualHolder ind : inds) {
-        ((GPFitness<GPComputationResult>) ind.ind.fitness)
-          .addResults(entry.getValue());
-        ((GPFitness<GPComputationResult>) ind.ind.fitness)
-          .setStandardizedFitness(state, sum);
+        final GPFitness<GPComputationResult> fitn =
+          (GPFitness<GPComputationResult>) ind.ind.fitness;
+
+        fitn.addResults(entry.getValue());
+        fitn.setStandardizedFitness(state, sum);
+
         ind.ind.evaluated = true;
       }
     }
