@@ -44,8 +44,8 @@ public class TestGPProgram {
     // GPProgramCreator.convertToGPProgram(node, Object.class);
     // System.out.println(GPProgramParser.toLisp(prog));
 
-    assertFunc(1, "(sub 1.0 0.0)");
-    assertFunc(216, "(pow (div (sub (mul 10.0 2.0) 8.0) 2.0) 3.0)");
+    assertFunc(1, "(- 1.0 0.0)");
+    assertFunc(216, "(pow (/ (- (x 10.0 2.0) 8.0) 2.0) 3.0)");
     assertFunc(4, "(pow 2.0 2.0)");
 
   }
