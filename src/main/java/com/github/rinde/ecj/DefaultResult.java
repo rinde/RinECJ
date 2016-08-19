@@ -19,9 +19,6 @@ public class DefaultResult implements GPComputationResult {
 
   @Override
   public float getFitness() {
-    final String lul =
-      "this is an insanely long string that will reach completely over the line"
-        + " of 80 chaaracters";
     return fitness;
   }
 
