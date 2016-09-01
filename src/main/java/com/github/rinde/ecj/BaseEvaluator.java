@@ -94,30 +94,22 @@ public abstract class BaseEvaluator extends Evaluator {
       final String programString = res.getTaskDataId();
       gatheredFitnessValues.put(programString, res);
     }
+
+    final int expectedResPerInd = expectedNumberOfResultsPerGPIndividual(state);
+
     for (final Entry<String, Collection<GPComputationResult>> entry : gatheredFitnessValues
       .asMap().entrySet()) {
-      if (entry.getValue()
-        .size() != expectedNumberOfResultsPerGPIndividual(state)) {
-        throw new IllegalStateException(
-          "Number of received results does not match the number of expected "
-            + "results! received: "
-            + entry.getValue().size() + " expected: "
-            + expectedNumberOfResultsPerGPIndividual(state) + " for " + entry);
-      }
+      checkState(entry.getValue().size() == expectedResPerInd,
+        "Number of received results does not match the number of expected "
+          + "results. Received: %s, expected: %s for %s.",
+        entry.getValue().size(), expectedResPerInd, entry);
 
       float sum = 0;
-      boolean notGood = false;
       for (final GPComputationResult res : entry.getValue()) {
-        if (res.getFitness() == Float.MAX_VALUE) {
-          notGood = true;
-        }
-        sum += res.getFitness();
+        sum += res.getFitness() / expectedResPerInd;
       }
-      if (notGood) {
-        sum = Float.MAX_VALUE;
-      } else {
-        sum /= expectedNumberOfResultsPerGPIndividual(state);
-      }
+      checkState(sum >= 0, "Fitness can not be negative");
+
       final Collection<IndividualHolder> inds =
         mapping.get(new GPNodeHolder(entry.getKey()));
       checkState(!inds.isEmpty(),
