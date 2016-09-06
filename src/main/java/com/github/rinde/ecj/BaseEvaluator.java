@@ -108,7 +108,11 @@ public abstract class BaseEvaluator extends Evaluator {
       for (final GPComputationResult res : entry.getValue()) {
         sum += res.getFitness() / expectedResPerInd;
       }
-      checkState(sum >= 0, "Fitness can not be negative");
+      if (Float.isInfinite(sum)) {
+        sum = Float.MAX_VALUE;
+      }
+      checkState(sum >= 0, "Fitness cannot be negative");
+      checkState(!Float.isNaN(sum), "Fitness cannot be NaN.");
 
       final Collection<IndividualHolder> inds =
         mapping.get(new GPNodeHolder(entry.getKey()));
