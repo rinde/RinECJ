@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.rinde</groupId>
 	<artifactId>rinecj</artifactId>
-	<version>0.2.0</version>
+	<version>0.3.0-SNAPSHOT</version>
 
 	<name>RinECJ</name>
 	<description>A wrapper for ECJ which simplifies configuration of genetic programming.</description>
