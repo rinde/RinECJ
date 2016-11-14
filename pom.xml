@@ -48,11 +48,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sonar.language>java</sonar.language>
-		<jppf.version>4.1.3</jppf.version>
 	</properties>
 
 	<dependencies>
-		<!-- <dependency> <groupId>org.jppf</groupId> <artifactId>jppf-client</artifactId> <version>${jppf.version}</version> </dependency> -->
 		<dependency>
 			<groupId>edu.gmu.cs</groupId>
 			<artifactId>ecj</artifactId>
