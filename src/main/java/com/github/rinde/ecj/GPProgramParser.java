@@ -9,6 +9,7 @@ import static com.google.common.collect.Maps.newHashMap;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
@@ -112,6 +113,57 @@ public final class GPProgramParser {
 
   public static String toLisp(GPProgram<?> prog) {
     return toLisp(prog.root);
+  }
+
+  static final char NODE_PREFIX = 'n';
+
+  public static String toDot(GPProgram<?> prog) {
+
+    final StringBuilder string = new StringBuilder();
+    string.append("digraph mapgraph {").append(System.lineSeparator());
+
+    final Map<GPFuncNode<?>, Integer> idMap = new LinkedHashMap<>();
+    int nodeId = 0;
+    final List<GPFuncNode<?>> todo = new ArrayList<>();
+    todo.add(prog.root);
+
+    while (!todo.isEmpty()) {
+      final GPFuncNode<?> cur = todo.remove(0);
+      string.append(NODE_PREFIX)
+        .append(nodeId)
+        .append("[label=\"")
+        .append(cur.getFunction().name())
+        .append("\"]")
+        .append(System.lineSeparator());
+
+      idMap.put(cur, new Integer(nodeId));
+      nodeId++;
+
+      for (int i = 0; i < cur.getNumChildren(); i++) {
+        todo.add(cur.getChild(i));
+      }
+    }
+
+    todo.add(prog.root);
+    while (!todo.isEmpty()) {
+      final GPFuncNode<?> cur = todo.remove(0);
+
+      for (int i = 0; i < cur.getNumChildren(); i++) {
+        final GPFuncNode<?> child = cur.getChild(i);
+        string.append(NODE_PREFIX)
+          .append(idMap.get(cur))
+          .append(" -> ")
+          .append(NODE_PREFIX)
+          .append(idMap.get(child))
+          .append(System.lineSeparator());
+
+        todo.add(child);
+      }
+    }
+
+    string.append("}").append(System.lineSeparator());
+    return string.toString();
+
   }
 
   public static String toLisp(GPFuncNode<?> node) {
