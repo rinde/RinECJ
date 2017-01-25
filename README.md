@@ -1,4 +1,4 @@
-# RinECJ 0.3.0
+# RinECJ 0.4.0-SNAPSHOT
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.165160.svg)](https://doi.org/10.5281/zenodo.165160)
 
