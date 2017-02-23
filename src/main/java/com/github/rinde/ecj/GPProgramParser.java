@@ -21,6 +21,7 @@ import ec.gp.GPNode;
  *
  */
 public final class GPProgramParser {
+  static final char NODE_PREFIX = 'n';
 
   private static final String SUPER_NAME = "super";
   private static final String SPACE = " ";
@@ -114,8 +115,6 @@ public final class GPProgramParser {
   public static String toLisp(GPProgram<?> prog) {
     return toLisp(prog.root);
   }
-
-  static final char NODE_PREFIX = 'n';
 
   public static String toDot(GPProgram<?> prog) {
 
